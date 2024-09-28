@@ -89,8 +89,11 @@ AUTH_USER_MODEL='accounts.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'complete_auth',
+        'USER': 'postgres',
+        'PASSWORD': '9780ubuntu',
+        'HOST': '213.199.44.2'
     }
 }
 
@@ -157,10 +160,19 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-EMAIL_HOST='smtp.mailtrap.io'
-EMAIL_HOST_USER=env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL='info@henryjwtauth.com'
-EMAIL_USE_TLS=True
-EMAIL_PORT = '2525'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# EMAIL_HOST='smtp.mailtrap.io'
+# EMAIL_HOST_USER=env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
+# DEFAULT_FROM_EMAIL='info@henryjwtauth.com'
+# EMAIL_USE_TLS=True
+# EMAIL_PORT = '2525'
+
+
+#Service Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_HOST = 'smtp.gmail.com' 
+EMAIL_USE_TLS = True 
+EMAIL_PORT = 587 
+EMAIL_HOST_USER = 'xiomara.huamani.c@gmail.com' 
+EMAIL_HOST_PASSWORD = '%23Fu115TacK%'
