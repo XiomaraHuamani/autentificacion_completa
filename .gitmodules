@@ -1,0 +1,3 @@
+[submodule "autentificacion_completa"]
+	path = autentificacion_completa
+	url = git@github.com:XiomaraHuamani/autentificacion_completa.git
