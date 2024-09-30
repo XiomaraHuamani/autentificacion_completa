@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS=True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -160,19 +160,39 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# EMAIL_HOST='smtp.mailtrap.io'
-# EMAIL_HOST_USER=env('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
-# DEFAULT_FROM_EMAIL='info@henryjwtauth.com'
-# EMAIL_USE_TLS=True
-# EMAIL_PORT = '2525'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'xiomara.huamani.c@gmail.com' 
+EMAIL_HOST_PASSWORD = 'dyzk ofde idum ldlh'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_USE_TLS= True
+EMAIL_PORT = 587 
 
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
 
 #Service Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
-EMAIL_HOST = 'smtp.gmail.com' 
-EMAIL_USE_TLS = True 
-EMAIL_PORT = 587 
-EMAIL_HOST_USER = 'xiomara.huamani.c@gmail.com' 
-EMAIL_HOST_PASSWORD = '%23Fu115TacK%'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+# EMAIL_HOST = 'smtp.gmail.com' 
+# EMAIL_USE_TLS = True 
+# EMAIL_PORT = 587 
+# EMAIL_HOST_USER = 'xiomara.huamani.c@gmail.com' 
+# EMAIL_HOST_PASSWORD = 'nwzf erbs etve wuqw'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
